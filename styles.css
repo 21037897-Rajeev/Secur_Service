@@ -1,0 +1,35 @@
+body {
+    background-color: #212121;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: #000;
+    padding: 1rem 1.5rem;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    color: #fff;
+    font-size: 1.25rem;
+    transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #aaa;
+}
+
+.navbar-nav .btn-outline-warning {
+    border-color: #f1c40f;
+    color: #f1c40f;
+}
+
+.navbar-nav .btn-outline-warning:hover {
+    background-color: #f1c40f;
+    color: #000;
+}
