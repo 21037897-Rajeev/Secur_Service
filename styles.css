@@ -1,4 +1,4 @@
-/* General Styles */
+/* Basic Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -7,209 +7,232 @@ body {
 
 .container {
     width: 80%;
-    margin: auto;
-    overflow: hidden;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 /* Navbar Styles */
 .navbar {
-    background: #333;
-    color: #fff;
-    padding: 1rem 0;
+    background-color: white;
+    overflow: hidden;
+    border-bottom: 1px solid #ddd;
 }
 
-.navbar a {
-    color: #fff;
+.navbar-black {
+    background-color: black;
+}
+
+.navbar .navbar-brand {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 14px 20px;
     text-decoration: none;
-    padding: 0 1rem;
+    font-size: 1.5em;
 }
 
-.navbar-brand {
-    font-size: 1.5rem;
+.navbar-black .navbar-brand {
+    color: white;
 }
 
-.navbar-nav {
-    list-style: none;
+.navbar .navbar-nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
     float: right;
 }
 
-.navbar-nav li {
-    display: inline;
+.navbar .navbar-nav li {
+    float: left;
 }
 
-.search-form input[type="text"] {
-    padding: 0.5rem;
-    border: 1px solid #ccc;
+.navbar .navbar-nav li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
 }
 
-.search-form button {
-    padding: 0.5rem;
-    background: yellow;
+.navbar-black .navbar-nav li a {
+    color: white;
+}
+
+.navbar .navbar-nav li a:hover {
+    background-color: #f1f1f1;
+}
+
+.navbar-black .navbar-nav li a:hover {
+    background-color: #575757;
+}
+
+.navbar .search-form {
+    float: right;
+    padding: 14px 20px;
+}
+
+.navbar .search-form input {
+    padding: 5px;
+    font-size: 17px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: yellow;
+}
+
+.navbar .search-form button {
+    padding: 5px 10px;
+    background: #ddd;
+    font-size: 17px;
     border: none;
+    cursor: pointer;
+    background-color: yellow;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
 
 /* Hero Section Styles */
 .hero {
     background: #f4f4f4;
-    color: #333;
-    padding: 2rem 0;
+    padding: 50px 0;
     text-align: center;
 }
 
+.hero-black {
+    background: black;
+    color: white;
+}
+
 .hero h1 {
-    margin: 0;
-    padding-bottom: 1rem;
+    margin: 0 0 20px;
+    font-size: 3em;
 }
 
 .hero p {
-    font-size: 1.2rem;
-}
-
-.hero .btn {
-    background: #333;
-    color: #fff;
-    padding: 1rem 2rem;
-    text-decoration: none;
+    margin: 0;
+    font-size: 1.2em;
 }
 
 /* Features Section Styles */
 .features {
     background: #fff;
-    padding: 2rem 0;
+    padding: 50px 0;
     text-align: center;
 }
 
 .features .feature {
-    padding: 1rem;
-    border-bottom: 1px solid #ddd;
+    margin: 0 0 20px;
 }
 
 .features .feature h2 {
-    margin-top: 0;
+    margin: 0 0 10px;
+}
+
+.features .feature p {
+    margin: 0 0 20px;
 }
 
 .features .feature .btn {
+    padding: 10px 20px;
     background: #333;
-    color: #fff;
-    padding: 0.5rem 1rem;
+    color: white;
     text-decoration: none;
+    border-radius: 5px;
+}
+
+.features .feature .btn:hover {
+    background: #575757;
+}
+
+/* Form Styles */
+form {
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input, form select, form button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+form button {
+    background: #ffd700; /* Gold */
+    color: black;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #ffcc00;
+}
+
+/* Payment Methods Styles */
+.payment-methods {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.payment-option {
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.payment-option img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 /* Footer Styles */
 footer {
     background: #333;
-    color: #fff;
+    color: white;
     text-align: center;
-    padding: 1rem 0;
+    padding: 20px 0;
 }
 
 footer p {
     margin: 0;
 }
 
-/* Login and Signup Styles */
-body.login-bg {
-    background: #007bff;
-    color: #fff;
+/* Specific Styles */
+.transaction-details h2 {
+    margin-bottom: 20px;
 }
 
-.login-container {
-    width: 300px;
-    margin: 100px auto;
-    padding: 2rem;
-    background: #fff;
-    color: #333;
-    border-radius: 5px;
-}
-
-.login-container h1 {
-    text-align: center;
-}
-
-.login-container form {
-    display: flex;
-    flex-direction: column;
-}
-
-.login-container label {
-    margin-bottom: 0.5rem;
-}
-
-.login-container input {
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-    border: 1px solid #ccc;
-}
-
-.login-container .btn {
-    background: #007bff;
-    color: #fff;
-    padding: 0.5rem;
-    border: none;
-    cursor: pointer;
-}
-
-/* Transaction Details Styles */
-.transaction-form {
-    padding: 2rem 0;
-    text-align: center;
-}
-
-.transaction-form form {
-    width: 300px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-}
-
-.transaction-form label {
-    margin-bottom: 0.5rem;
-}
-
-.transaction-form input {
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-    border: 1px solid #ccc;
-}
-
-.transaction-form .btn {
-    background: #333;
-    color: #fff;
-    padding: 0.5rem;
-    border: none;
-    cursor: pointer;
-}
-
-/* Transaction Complete Styles */
-.complete-info {
-    padding: 2rem 0;
-    text-align: center;
-}
-
-.complete-info .btn {
-    background: #333;
-    color: #fff;
-    padding: 1rem 2rem;
-    text-decoration: none;
-}
-
-/* Payment Method Styles */
-.payment-methods {
-    padding: 2rem 0;
-    text-align: center;
-}
-
-.payment-methods h2 {
-    margin-bottom: 2rem;
-}
-
-.payment-options {
+/* Login & Signup Styles */
+.login-bg, .create-account-bg, .forgot-password-bg {
+    background-color: navy;
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    align-items: center;
+    height: 100vh;
+    color: white;
 }
 
-.payment-options img {
-    width: 100px;
-    cursor: pointer;
+.login-container, .create-account-container, .forgot-password-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.login-container h1, .create-account-container h1, .forgot-password-container h1 {
+    margin-bottom: 20px;
+}
+
+.login-container form label, .create-account-container form label, .forgot-password-container form label {
+    margin-top: 10px;
 }

@@ -3,20 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secur Service - Payment Method</title>
+    <title>Payment Method - Secur Service</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">Secur Service</a>
+            <ul class="navbar-nav">
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="transaction-details.html">Checkout</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="create-account.html">Create Account</a></li>
+            </ul>
+            <form class="search-form">
+                <input type="text" placeholder="Search">
+                <button type="submit">🔍</button>
+            </form>
+        </div>
+    </nav>
+
     <header class="hero">
         <h1>Payment Method</h1>
     </header>
 
-    <section class="payment-methods">
+    <section class="features">
         <div class="container">
-            <h2>Choose your payment method:</h2>
-            <div class="payment-options">
-                <a href="transaction-details.html?method=apple-pay"><img src="apple-pay-logo.png" alt="Apple Pay"></a>
-                <a href="transaction-details.html?method=google-pay"><img src="google-pay-logo.png" alt="Google Pay"></a>
+            <div class="payment-methods">
+                <div class="payment-option" onclick="selectPayment('Apple Pay')">
+                    <img src="apple-pay-logo.png" alt="Apple Pay">
+                </div>
+                <div class="payment-option" onclick="selectPayment('Google Pay')">
+                    <img src="google-pay-logo.png" alt="Google Pay">
+                </div>
+                <div class="payment-option" onclick="selectPayment('PayPal')">
+                    <img src="paypal-logo.png" alt="PayPal">
+                </div>
                 <!-- Add more payment options as needed -->
             </div>
         </div>
@@ -27,5 +51,13 @@
             <p>&copy; 2024 Secur Service. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        function selectPayment(method) {
+            localStorage.setItem('paymentMethod', method);
+            document.getElementById('pay-by').value = method;
+            location.href = 'transaction-details.html';
+        }
+    </script>
 </body>
 </html>

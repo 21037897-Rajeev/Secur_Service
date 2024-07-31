@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - Secur Service</title>
+    <title>Blockchain Features - Secur Service</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -26,15 +26,16 @@
     </nav>
 
     <header class="hero">
-        <h1>Our Services</h1>
+        <h1>Blockchain Features</h1>
     </header>
 
     <section class="features">
         <div class="container">
             <div class="feature">
-                <h2>Service Targets</h2>
-                <p>Details about service targets...</p>
-                <a href="ai-features.html" class="btn">Next: AI Features</a>
+                <h2>Blockchain Features</h2>
+                <p>In-depth details about Blockchain features...</p>
+                <button class="btn" onclick="addToFee(25)">Buy for $25</button>
+                <a href="blockchain-read-more.html" class="btn">Read More</a>
             </div>
         </div>
     </section>
@@ -44,5 +45,13 @@
             <p>&copy; 2024 Secur Service. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        function addToFee(amount) {
+            let fee = localStorage.getItem('fee') ? parseFloat(localStorage.getItem('fee')) : 0;
+            fee += amount;
+            localStorage.setItem('fee', fee.toFixed(2));
+        }
+    </script>
 </body>
 </html>

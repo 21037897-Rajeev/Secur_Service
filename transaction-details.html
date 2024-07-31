@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secur Service - Transaction Details</title>
+    <title>Transaction Details - Secur Service</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,13 +11,14 @@
         <div class="container">
             <a href="index.html" class="navbar-brand">Secur Service</a>
             <ul class="navbar-nav">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
                 <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="transaction-details.html">Checkout</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="create-account.html">Create Account</a></li>
             </ul>
-            <form class="search-form" action="#">
+            <form class="search-form">
                 <input type="text" placeholder="Search">
                 <button type="submit">🔍</button>
             </form>
@@ -28,22 +29,30 @@
         <h1>Transaction Details</h1>
     </header>
 
-    <section class="transaction-form">
-        <div class="container">
-            <form action="transaction-complete.html">
+    <section class="features">
+        <div class="container transaction-details">
+            <h2>Transaction Details</h2>
+            <form>
                 <label for="pay-by">Pay by:</label>
-                <a href="payment-method.html" class="btn">Choose Payment Method</a>
-                <label for="top-up">Top up:</label>
-                <input type="number" id="top-up" name="top-up" required>
-                <label for="total-fee">Total Fee:</label>
-                <input type="number" id="total-fee" name="total-fee" required readonly>
-                <label for="total">Total (with GST and service charge):</label>
-                <input type="number" id="total" name="total" required readonly>
+                <button type="button" onclick="location.href='payment-method.html'">Select Payment Method</button>
+                <input type="text" id="pay-by" name="pay-by" readonly>
+
+                <label for="top-up">Top-up: (leave it blank if you don't want to top-up)</label>
+                <input type="text" id="top-up" name="top-up">
+
+                <label for="total-fee">Total fee:</label>
+                <input type="text" id="total-fee" name="total-fee" readonly>
+
+                <label for="total">Total (with 9% GST and 2% service charge):</label>
+                <input type="text" id="total" name="total" readonly>
+
                 <label for="payer">Payer:</label>
-                <input type="text" id="payer" name="payer" required>
+                <input type="text" id="payer" name="payer">
+
                 <label for="transaction-id">Transaction ID:</label>
-                <input type="text" id="transaction-id" name="transaction-id" required>
-                <button type="submit" class="btn">Submit</button>
+                <input type="text" id="transaction-id" name="transaction-id" readonly>
+
+                <button type="button" onclick="completeTransaction()">Submit</button>
             </form>
         </div>
     </section>
@@ -53,5 +62,23 @@
             <p>&copy; 2024 Secur Service. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let fee = localStorage.getItem('fee') ? parseFloat(localStorage.getItem('fee')) : 0;
+            let gst = fee * 0.09;
+            let serviceCharge = fee * 0.02;
+            let total = fee + gst + serviceCharge;
+
+            document.getElementById('total-fee').value = fee.toFixed(2);
+            document.getElementById('total').value = total.toFixed(2);
+            document.getElementById('payer').value = localStorage.getItem('payerName');
+        });
+
+        function completeTransaction() {
+            alert("TRANSACTION COMPLETED");
+            location.href = 'index.html';
+        }
+    </script>
 </body>
 </html>
