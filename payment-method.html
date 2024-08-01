@@ -33,13 +33,13 @@
         <div class="container">
             <div class="payment-methods">
                 <div class="payment-option" onclick="selectPayment('Apple Pay')">
-                    <img src="apple-pay-logo.png" alt="Apple Pay">
+                    <img src="images/apple-pay-logo.png" alt="Apple Pay">
                 </div>
                 <div class="payment-option" onclick="selectPayment('Google Pay')">
-                    <img src="google-pay-logo.png" alt="Google Pay">
+                    <img src="images/google-pay-logo.png" alt="Google Pay">
                 </div>
                 <div class="payment-option" onclick="selectPayment('PayPal')">
-                    <img src="paypal-logo.png" alt="PayPal">
+                    <img src="images/paypal-logo.jpg" alt="PayPal">
                 </div>
                 <!-- Add more payment options as needed -->
             </div>
@@ -52,12 +52,6 @@
         </div>
     </footer>
 
-    <script>
-        function selectPayment(method) {
-            localStorage.setItem('paymentMethod', method);
-            document.getElementById('pay-by').value = method;
-            location.href = 'transaction-details.html';
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

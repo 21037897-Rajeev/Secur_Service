@@ -218,7 +218,6 @@ footer p {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    color: white;
 }
 
 .login-container, .create-account-container, .forgot-password-container {
@@ -236,3 +235,4 @@ footer p {
 .login-container form label, .create-account-container form label, .forgot-password-container form label {
     margin-top: 10px;
 }
+

@@ -47,12 +47,6 @@
         </div>
     </footer>
 
-    <script>
-        function addToFee(amount) {
-            let fee = localStorage.getItem('fee') ? parseFloat(localStorage.getItem('fee')) : 0;
-            fee += amount;
-            localStorage.setItem('fee', fee.toFixed(2));
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

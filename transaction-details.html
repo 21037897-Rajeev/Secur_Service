@@ -63,22 +63,6 @@
         </div>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            let fee = localStorage.getItem('fee') ? parseFloat(localStorage.getItem('fee')) : 0;
-            let gst = fee * 0.09;
-            let serviceCharge = fee * 0.02;
-            let total = fee + gst + serviceCharge;
-
-            document.getElementById('total-fee').value = fee.toFixed(2);
-            document.getElementById('total').value = total.toFixed(2);
-            document.getElementById('payer').value = localStorage.getItem('payerName');
-        });
-
-        function completeTransaction() {
-            alert("TRANSACTION COMPLETED");
-            location.href = 'index.html';
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

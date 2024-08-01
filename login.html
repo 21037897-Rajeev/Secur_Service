@@ -8,26 +8,19 @@
 </head>
 <body class="login-bg">
     <div class="login-container">
-        <h1>Login</h1>
+        <h1 class="word">Login</h1>
         <form onsubmit="login(event)">
-            <label for="name">Name:</label>
+            <label for="name" class="word">Name:</label>
             <input type="text" id="name" name="name" required>
 
-            <label for="password">Password:</label>
+            <label for="password" class="word">Password:</label>
             <input type="password" id="password" name="password" required>
 
             <button type="submit">Login</button>
-            <p>Forgot your password? <a href="forgot-password.html">Forgot Password</a></p>
+            <p class="word">Forgot your <a href="forgot-password.html">password</a>?</p>
         </form>
     </div>
 
-    <script>
-        function login(event) {
-            event.preventDefault();
-            const name = document.getElementById('name').value;
-            localStorage.setItem('payerName', name);
-            location.href = 'index.html';
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

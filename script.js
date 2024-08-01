@@ -1,42 +1,59 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const loginForm = document.getElementById("loginForm");
-    const generalDetailsForm = document.getElementById("generalDetailsForm");
-    const transactionDetailsForm = document.getElementById("transactionDetailsForm");
-    const paymentMethodForm = document.getElementById("paymentMethodForm");
-    const subscribeForm = document.getElementById("subscribeForm");
+//create-account.html
+function createAccount(event) {
+    event.preventDefault();
+    const name = document.getElementById('name').value;
+    localStorage.setItem('payerName', name);
+    location.href = 'login.html';
+}
 
-    if (loginForm) {
-        loginForm.addEventListener("submit", function(event) {
-            event.preventDefault();
-            alert("Login form submitted");
-        });
-    }
+//login.html
+function login(event) {
+    event.preventDefault();
+    const name = document.getElementById('name').value;
+    localStorage.setItem('payerName', name);
+    location.href = 'homepage.html';
+}
 
-    if (generalDetailsForm) {
-        generalDetailsForm.addEventListener("submit", function(event) {
-            event.preventDefault();
-            alert("General Details form submitted");
-        });
-    }
+//forgot-password.html
+function resetPassword(event) {
+    event.preventDefault();
+    location.href = 'index.html';
+}
 
-    if (transactionDetailsForm) {
-        transactionDetailsForm.addEventListener("submit", function(event) {
-            event.preventDefault();
-            alert("Transaction Details form submitted");
-        });
-    }
+//ai-features.html
+function addToFee(amount) {
+    let fee = localStorage.getItem('fee') ? parseFloat(localStorage.getItem('fee')) : 0;
+    fee += amount;
+    localStorage.setItem('fee', fee.toFixed(2));
+}
 
-    if (paymentMethodForm) {
-        paymentMethodForm.addEventListener("submit", function(event) {
-            event.preventDefault();
-            alert("Payment Method form submitted");
-        });
-    }
+//blockchain-features.html
+function addToFee(amount) {
+    let fee = localStorage.getItem('fee') ? parseFloat(localStorage.getItem('fee')) : 0;
+    fee += amount;
+    localStorage.setItem('fee', fee.toFixed(2));
+}
 
-    if (subscribeForm) {
-        subscribeForm.addEventListener("submit", function(event) {
-            event.preventDefault();
-            alert("Subscribe form submitted");
-        });
-    }
+//transaction-details.html
+document.addEventListener('DOMContentLoaded', function() {
+    let fee = localStorage.getItem('fee') ? parseFloat(localStorage.getItem('fee')) : 0;
+    let gst = fee * 0.09;
+    let serviceCharge = fee * 0.02;
+    let total = fee + gst + serviceCharge;
+
+    document.getElementById('total-fee').value = fee.toFixed(2);
+    document.getElementById('total').value = total.toFixed(2);
+    document.getElementById('payer').value = localStorage.getItem('payerName');
 });
+
+function completeTransaction() {
+    alert("TRANSACTION COMPLETED");
+    location.href = 'index.html';
+}
+
+//payment-method.html
+function selectPayment(method) {
+    localStorage.setItem('paymentMethod', method);
+    document.getElementById('pay-by').value = method;
+    location.href = 'transaction-details.html';
+}
