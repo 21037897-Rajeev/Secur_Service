@@ -106,24 +106,24 @@ body{
     border-radius: 5px;
 }
 
-/* Hero Section Styles */
-.hero {
+/* Header Section Styles */
+.header {
     background: #f4f4f4;
     padding: 50px 0;
     text-align: center;
 }
 
-.hero-black {
+.header-black {
     background: black;
     color: white;
 }
 
-.hero h1 {
+.header h1 {
     margin: 0 0 20px;
     font-size: 3em;
 }
 
-.hero p {
+.header p {
     margin: 0;
     font-size: 1.2em;
 }
@@ -149,14 +149,14 @@ body{
 
 .features .feature .btn {
     padding: 10px 20px;
-    background: #333;
+    background: goldenrod;
     color: white;
     text-decoration: none;
     border-radius: 5px;
 }
 
 .features .feature .btn:hover {
-    background: #575757;
+    background: yellow;
 }
 
 /* Form Styles */
@@ -180,7 +180,7 @@ form input, form select, form button {
 }
 
 form button {
-    background: #ffd700; /* Gold */
+    background: #ffd700; 
     color: black;
     border: none;
     cursor: pointer;
@@ -253,3 +253,10 @@ footer p {
     margin-top: 10px;
 }
 
+.button{
+    padding: 10px 20px;
+    background: goldenrod;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
