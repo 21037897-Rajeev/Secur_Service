@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="wrapper">
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="navbar-brand">Secur Service</a>
@@ -26,7 +27,7 @@
     </nav>
 
     <header class="hero">
-        <h1>Payment Method</h1>
+        <h1>Select a Payment Method</h1>
     </header>
 
     <section class="features">
@@ -41,17 +42,21 @@
                 <div class="payment-option" onclick="selectPayment('PayPal')">
                     <img src="images/paypal-logo.jpg" alt="PayPal">
                 </div>
+                <div class="payment-option" onclick="selectPayment('PayPal')">
+                    <img src="images/paypal-logo.jpg" alt="PayPal">
+                </div>
                 <!-- Add more payment options as needed -->
             </div>
         </div>
     </section>
 
-    <footer>
+    <footer class="footer">
         <div class="container">
             <p>&copy; 2024 Secur Service. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
+    </div>
 </body>
 </html>

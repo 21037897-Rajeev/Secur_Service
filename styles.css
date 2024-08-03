@@ -1,14 +1,30 @@
 /* Basic Styles */
-body {
+html, body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
 }
 
 .container {
     width: 80%;
     margin: 0 auto;
     padding: 20px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Flex-grow for the main content to push the footer to the bottom */
+.content {
+    flex-grow: 1;
 }
 
 /* Navbar Styles */
@@ -200,6 +216,7 @@ footer {
     color: white;
     text-align: center;
     padding: 20px 0;
+    margin-top: auto;
 }
 
 footer p {
