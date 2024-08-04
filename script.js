@@ -54,9 +54,6 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('total').value = total.toFixed(2);
     document.getElementById('payer').value = localStorage.getItem('payerName');
     
-    
-
-
     const paymentMethod = localStorage.getItem('paymentMethod');
     if (paymentMethod) {
         document.getElementById('payment-method').innerText = paymentMethod;
